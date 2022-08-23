@@ -155,5 +155,4 @@ class RadioTest {
         int expected = 0, actual = radio.getCurrentVolumeLevel();
         assertEquals(expected, actual);
     }
-
 }
