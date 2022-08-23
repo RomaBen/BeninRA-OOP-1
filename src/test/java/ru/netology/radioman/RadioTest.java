@@ -29,7 +29,7 @@ class RadioTest {
     }
 
     @Test
-    public void testSetCurrentRadioLessStationThanLimit() {
+    public void testSetCurrentRadioStationLessThanLimit() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(-1);
         int expected = 9, actual = radio.getCurrentRadioStation();
@@ -155,5 +155,5 @@ class RadioTest {
         int expected = 0, actual = radio.getCurrentVolumeLevel();
         assertEquals(expected, actual);
     }
-    //Test
+
 }
