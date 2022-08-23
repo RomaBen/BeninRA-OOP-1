@@ -1,18 +1,28 @@
 package ru.netology.radioman;
 
 public class Radio {
-    private double currentRadioStation;
+    private int currentRadioStation;
 
-    public double getCurrentRadioStation() {
+    public int getCurrentRadioStation() {
         return currentRadioStation;
     }
 
-    public void setCurrentRadioStation(double currentRadioStation) {
+    public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation < 0)
             currentRadioStation = 9;
         if (currentRadioStation > 9)
             currentRadioStation = 0;
         this.currentRadioStation= currentRadioStation;
+    }
+
+    public void setNextRadioStation() {
+        currentRadioStation++;
+        setCurrentRadioStation(currentRadioStation);
+    }
+
+    public void setPreviousRadioStation() {
+        currentRadioStation--;
+        setCurrentRadioStation(currentRadioStation);
     }
 
     private int currentVolumeLevel;
@@ -23,17 +33,27 @@ public class Radio {
 
     public void setCurrentVolumeLevel(int currentVolumeLevel) {
         if (currentVolumeLevel < 0)
-            return;
+            currentVolumeLevel = 0;
         if (currentVolumeLevel > 10)
-            return;
+            currentVolumeLevel = 10;
         this.currentVolumeLevel= currentVolumeLevel;
     }
 
     public void setVolumeLevelToMaximum() {
-        currentVolumeLevel = 10;
+        setCurrentVolumeLevel(10);
     }
 
     public void setVolumeLevelToMinimum() {
-        currentVolumeLevel = 0;
+        setCurrentVolumeLevel(0);
+    }
+
+    public void turnUpVolumeLevelByOne() {
+        currentVolumeLevel++;
+        setCurrentVolumeLevel(currentVolumeLevel);
+    }
+
+    public void turnDownVolumeLevelByOne() {
+        currentVolumeLevel--;
+        setCurrentVolumeLevel(currentVolumeLevel);
     }
 }
